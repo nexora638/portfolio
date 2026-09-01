@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luna Beauty Salon</title>
+<meta name="description" content="Luna Beauty Salon offers personalized hair styling and beauty services in an elegant and relaxing environment.">
+
+<style>
+:root{
+    --white:#ffffff;
+    --beige:#f5f0ea;
+    --warm-gray:#8b8178;
+    --charcoal:#2f2f2f;
+    --border:#e7e1da;
+    --container:1200px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--charcoal);
+    background:var(--white);
+    line-height:1.7;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(92%, var(--container));
+    margin:auto;
+}
+
+section{
+    padding:90px 0;
+}
+
+.section-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-header h2{
+    font-size:2.2rem;
+    margin-bottom:12px;
+    font-weight:600;
+}
+
+.section-header p{
+    color:var(--warm-gray);
+    max-width:650px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:600;
+    transition:.2s ease;
+}
+
+.btn-primary{
+    background:var(--charcoal);
+    color:white;
+}
+
+.btn-primary:hover{
+    opacity:.9;
+}
+
+.btn-secondary{
+    border:1px solid var(--charcoal);
+    color:var(--charcoal);
+}
+
+.btn-secondary:hover{
+    background:var(--charcoal);
+    color:white;
+}
+
+/* Header */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-size:1.3rem;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    color:var(--warm-gray);
+    font-size:.95rem;
+}
+
+.nav-links a:hover{
+    color:var(--charcoal);
+}
+
+/* Hero */
+
+.hero{
+    background:linear-gradient(
+        rgba(255,255,255,.75),
+        rgba(255,255,255,.75)
+    ),
+    url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:clamp(2.8rem,6vw,5rem);
+    line-height:1.1;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.hero p{
+    font-size:1.1rem;
+    color:#555;
+    max-width:600px;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+/* About */
+
+.about{
+    background:var(--beige);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-image img{
+    border-radius:20px;
+    height:500px;
+    object-fit:cover;
+}
+
+.about-content h2{
+    margin-bottom:20px;
+    font-size:2.2rem;
+}
+
+.about-content p{
+    margin-bottom:18px;
+    color:#555;
+}
+
+/* Services */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+.card{
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:28px;
+    background:white;
+}
+
+.card h3{
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#666;
+    margin-bottom:18px;
+}
+
+.price{
+    font-weight:700;
+}
+
+/* Features */
+
+.features{
+    background:var(--beige);
+}
+
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+.feature-card{
+    background:white;
+    border-radius:18px;
+    padding:28px;
+}
+
+.feature-card h3{
+    margin-bottom:12px;
+}
+
+/* Gallery */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.gallery-grid img{
+    border-radius:18px;
+    height:350px;
+    object-fit:cover;
+}
+
+/* Testimonials */
+
+.testimonials-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.testimonial{
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:28px;
+}
+
+.testimonial p{
+    color:#555;
+    margin-bottom:18px;
+}
+
+.customer{
+    font-weight:600;
+}
+
+/* CTA */
+
+.cta{
+    background:var(--charcoal);
+    color:white;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.cta .btn{
+    background:white;
+    color:var(--charcoal);
+}
+
+/* Contact */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info h2{
+    margin-bottom:15px;
+}
+
+.contact-info p{
+    color:#666;
+}
+
+form{
+    display:grid;
+    gap:16px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    font:inherit;
+}
+
+textarea{
+    min-height:160px;
+    resize:vertical;
+}
+
+/* Footer */
+
+footer{
+    background:#f8f6f3;
+    border-top:1px solid var(--border);
+    padding:50px 0;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.footer-grid h4{
+    margin-bottom:12px;
+}
+
+.footer-grid p,
+.footer-grid a{
+    color:#666;
+}
+
+.copyright{
+    text-align:center;
+    margin-top:40px;
+    color:#777;
+    font-size:.9rem;
+}
+
+/* Responsive */
+
+@media (max-width: 992px){
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .services-grid,
+    .features-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .testimonials-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media (max-width: 768px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .services-grid,
+    .features-grid,
+    .gallery-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:70px 0;
+    }
+
+    .hero{
+        min-height:75vh;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container navbar">
+        <div class="logo">Luna Beauty Salon</div>
+
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#styles">Styles</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Beauty Designed Around You</h1>
+
+            <p>
+                Personalized hair styling and beauty services for modern women.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    Book Appointment
+                </a>
+
+                <a href="#services" class="btn btn-secondary">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="about-grid">
+
+            <div class="about-image">
+                <img
+                src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=80"
+                alt="Professional stylist working with client">
+            </div>
+
+            <div class="about-content">
+                <h2>About Luna Beauty Salon</h2>
+
+                <p>
+                    At Luna Beauty Salon, we believe beauty is personal.
+                    Every appointment is tailored to your individual style,
+                    preferences, and lifestyle.
+                </p>
+
+                <p>
+                    Our experienced stylists combine professional expertise
+                    with attentive care to create results that feel natural,
+                    elegant, and confidence-boosting.
+                </p>
+
+                <p>
+                    Enjoy a calm and welcoming atmosphere designed to help
+                    you relax while receiving premium beauty services.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>
+                Professional beauty services designed to help you look and feel your best.
+            </p>
+        </div>
+
+        <div class="services-grid">
+
+            <article class="card">
+                <h3>Hair Cut</h3>
+                <p>
+                    Precision cuts tailored to your face shape and personal style.
+                </p>
+                <div class="price">From $45</div>
+            </article>
+
+            <article class="card">
+                <h3>Hair Color</h3>
+                <p>
+                    Professional coloring services for vibrant and natural-looking results.
+                </p>
+                <div class="price">From $90</div>
+            </article>
+
+            <article class="card">
+                <h3>Treatment</h3>
+                <p>
+                    Deep conditioning and restorative treatments for healthy hair.
+                </p>
+                <div class="price">From $60</div>
+            </article>
+
+            <article class="card">
+                <h3>Styling</h3>
+                <p>
+                    Elegant styling for everyday confidence and special occasions.
+                </p>
+                <div class="price">From $50</div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Why Choose Us</h2>
+        </div>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <h3>Experienced Stylists</h3>
+                <p>
+                    Skilled professionals dedicated to exceptional results.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Premium Products</h3>
+                <p>
+                    Carefully selected products that support healthy, beautiful hair.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Personalized Consultation</h3>
+                <p>
+                    Recommendations tailored to your unique beauty goals.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Relaxing Environment</h3>
+                <p>
+                    A calm and elegant space designed for comfort and care.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="styles">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Featured Styles</h2>
+            <p>
+                A selection of elegant looks created by our professional team.
+            </p>
+        </div>
+
+        <div class="gallery-grid">
+
+            <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80" alt="Elegant hairstyle">
+
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Modern hair styling">
+
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80" alt="Hair color style">
+
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" alt="Luxury salon hairstyle">
+
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80" alt="Women's haircut style">
+
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" alt="Professional hair styling">
+
+        </div>
+
+    </div>
+</section>
+
+<section id="reviews">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+        </div>
+
+        <div class="testimonials-grid">
+
+            <div class="testimonial">
+                <p>
+                    “The stylist took the time to understand exactly what I wanted.
+                    The result was natural, elegant, and easy to maintain.”
+                </p>
+                <div class="customer">— Emily R.</div>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    “The atmosphere is calm and welcoming. I always leave feeling
+                    refreshed and confident.”
+                </p>
+                <div class="customer">— Sarah M.</div>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    “Excellent service and attention to detail. The consultation
+                    helped me find a style that truly suits me.”
+                </p>
+                <div class="customer">— Jessica L.</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <h2>Ready for Your Next Look?</h2>
+
+        <a href="#contact" class="btn">
+            Book Appointment
+        </a>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+
+                <p>
+                    We'd love to help you schedule your next appointment.
+                    Send us a message and our team will get back to you.
+                </p>
+            </div>
+
+            <form>
+                <label>
+                    <span class="sr-only">Name</span>
+                    <input type="text" placeholder="Name" required>
+                </label>
+
+                <label>
+                    <span class="sr-only">Email</span>
+                    <input type="email" placeholder="Email" required>
+                </label>
+
+                <label>
+                    <span class="sr-only">Phone</span>
+                    <input type="tel" placeholder="Phone" required>
+                </label>
+
+                <label>
+                    <span class="sr-only">Message</span>
+                    <textarea placeholder="Message"></textarea>
+                </label>
+
+                <button type="submit" class="btn btn-primary">
+                    Send Message
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+                <h4>Address</h4>
+                <p>
+                    123 Elegant Avenue<br>
+                    City Center
+                </p>
+            </div>
+
+            <div>
+                <h4>Business Hours</h4>
+                <p>
+                    Mon–Sat: 9:00 AM – 7:00 PM<br>
+                    Sunday: Closed
+                </p>
+            </div>
+
+            <div>
+                <h4>Instagram</h4>
+                <p>@lunabeautysalon</p>
+            </div>
+
+            <div>
+                <h4>Phone Number</h4>
+                <p>(555) 123-4567</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Luna Beauty Salon. All Rights Reserved.
+        </div>
+
+    </div>
+</footer>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Thank you for your message. We will contact you soon.");
+});
+</script>
+
+</body>
+</html>
