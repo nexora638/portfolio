@@ -62,12 +62,19 @@ a{
 }
 
 .site-header{
+
   position:sticky;
+
   top:0;
-  background:rgba(255,255,255,.92);
+
+  background:rgba(5,8,22,.95);
+
   backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
+
+  border-bottom:1px solid rgba(0,229,255,.2);
+
   z-index:100;
+
 }
 
 .site-header .container{
@@ -78,8 +85,17 @@ a{
 }
 
 .logo{
+
   font-weight:700;
+
   font-size:1rem;
+
+  color:#00e5ff;
+
+  text-shadow:
+  0 0 8px #00e5ff,
+  0 0 20px #00e5ff;
+
 }
 
 .nav-links{
@@ -117,10 +133,16 @@ a{
 }
 
 .hero h1{
+
   color:#ffffff;
+
   font-size:clamp(3rem,7vw,5rem);
-  line-height:1.05;
-  margin-bottom:.75rem;
+
+  text-shadow:
+  0 0 10px #00e5ff,
+  0 0 20px #00e5ff,
+  0 0 40px #00e5ff;
+
 }
 
 .hero h2{
@@ -154,8 +176,15 @@ a{
 }
 
 .btn-primary{
+
   background:var(--accent);
+
   color:white;
+
+  box-shadow:
+  0 0 10px #00e5ff,
+  0 0 30px rgba(0,229,255,.5);
+
 }
 
 .btn-primary:hover{
@@ -200,11 +229,14 @@ a{
 }
 
 .project-card{
+
   background:#0f172a;
-  border:1px solid #d4af37;
-  border-radius:var(--radius);
-  padding:1.75rem;
-  box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+  border:1px solid #00e5ff;
+
+  box-shadow:
+  0 0 15px rgba(0,229,255,.2);
+
 }
 .project-card h3{
   color:white;
@@ -251,14 +283,19 @@ a{
 }
 
 .process-item{
-.process-item{
+
   background:#0f172a;
+
   border:1px solid #d4af37;
+
   color:white;
-}
+
   border-radius:14px;
+
   padding:1.5rem;
+
   text-align:center;
+
 }
 
 .process-item span{
