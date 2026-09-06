@@ -344,7 +344,7 @@ a{
 
   padding:2rem;
 
-  min-height:180px;
+  min-height:160px;
 
   display:flex;
   flex-direction:column;
@@ -358,9 +358,11 @@ a{
 .process-item:hover{
   transform:translateY(-6px);
 
+  border-color:var(--accent);
+
   box-shadow:
-    0 0 20px rgba(212,175,55,.15),
-    0 0 40px rgba(212,175,55,.08);
+    0 0 15px rgba(0,229,255,.15);
+
 }
 
 .process-item p{
@@ -371,7 +373,16 @@ a{
 }
 
 .process-item span{
+
+  display:inline-block;
+
+  font-size:1.2rem;
+
+  font-weight:700;
+
   color:var(--accent);
+
+  margin-bottom:1rem;
 }
 
 .contact-form{
